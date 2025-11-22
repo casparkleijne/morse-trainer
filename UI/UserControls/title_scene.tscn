@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnhws0chdgv2v"]
+
+[ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="1_jbaax"]
+
+[node name="TitleScene" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Card" parent="." instance=ExtResource("1_jbaax")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "Yet Another Morse Trainer"
+horizontal_alignment = 1
+
+[editable path="Card"]

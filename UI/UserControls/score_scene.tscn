@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://2q6s5pw1esjw"]
+
+[ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_0u68x"]
+[ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_0qshq"]
+[ext_resource type="Script" uid="uid://dsii2tvw21mp1" path="res://UI/CustomControls/grid_card.gd" id="2_xjea0"]
+
+[node name="ScoreScene" type="VBoxContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridCard" parent="." instance=ExtResource("1_0u68x")]
+layout_mode = 2
+
+[node name="GridContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+columns = 4
+script = ExtResource("2_xjea0")
+
+[node name="Card" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="0" instance=ExtResource("2_0qshq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level"
+
+[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_0qshq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level"
+
+[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_0qshq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level"
+
+[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Card4" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="3" instance=ExtResource("2_0qshq")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level"
+
+[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[editable path="GridCard"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4"]

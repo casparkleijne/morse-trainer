@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg41w8sq6b3yg"]
+
+[ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_jqnko"]
+[ext_resource type="Script" uid="uid://c8087hoi0dk1h" path="res://UI/CustomControls/core_card.gd" id="2_fvfmp"]
+[ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_re7vb"]
+
+[node name="PlayerInputScene" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridCard" parent="." instance=ExtResource("1_jqnko")]
+layout_mode = 2
+
+[node name="GridContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+columns = 5
+script = ExtResource("2_fvfmp")
+
+[node name="Card" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="0" instance=ExtResource("2_re7vb")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "D"
+
+[node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_re7vb")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "C"
+
+[node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_re7vb")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "B"
+
+[node name="Card4" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="3" instance=ExtResource("2_re7vb")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "A"
+
+[node name="Card5" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="4" instance=ExtResource("2_re7vb")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card5/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+layout_mode = 2
+text = "E"
+
+[editable path="GridCard"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4"]
+[editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card5"]
