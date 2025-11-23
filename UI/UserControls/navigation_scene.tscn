@@ -32,6 +32,7 @@ size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+disabled = true
 text = "statistics"
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_lvlu1")]
@@ -41,6 +42,7 @@ size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+disabled = true
 text = "settings"
 
 [editable path="GridCard"]

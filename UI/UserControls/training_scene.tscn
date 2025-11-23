@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://o3y7yri8vvy0"]
+
+[ext_resource type="PackedScene" uid="uid://dps8f7uhdmhoq" path="res://UI/UserControls/progress_scene.tscn" id="1_4hgnn"]
+[ext_resource type="PackedScene" uid="uid://2q6s5pw1esjw" path="res://UI/UserControls/score_scene.tscn" id="2_2jlvh"]
+[ext_resource type="PackedScene" uid="uid://dg41w8sq6b3yg" path="res://UI/UserControls/playerinput_scene.tscn" id="3_26ntm"]
+[ext_resource type="Script" uid="uid://babisoqridwaq" path="res://UI/UserControls/playerinput_scene.gd" id="4_2jlvh"]
+[ext_resource type="PackedScene" uid="uid://dml243glmg6vj" path="res://UI/UserControls/operation_scene.tscn" id="4_7llgt"]
+
+[node name="TrainingScene" type="VBoxContainer"]
+
+[node name="ProgressScene" parent="." instance=ExtResource("1_4hgnn")]
+layout_mode = 2
+
+[node name="ScoreScene" parent="." instance=ExtResource("2_2jlvh")]
+visible = true
+layout_mode = 2
+
+[node name="PlayerInputScene" parent="." instance=ExtResource("3_26ntm")]
+layout_mode = 2
+script = ExtResource("4_2jlvh")
+
+[node name="OperationScene" parent="." instance=ExtResource("4_7llgt")]
+layout_mode = 2

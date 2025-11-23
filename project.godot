@@ -18,6 +18,13 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*res://Audio/audio_manager.gd"
+MorseData="*res://Game/morse_data.gd"
+Game="*res://Game/game.gd"
+EventBus="*res://Game/event_bus.gd"
+
 [display]
 
 window/size/viewport_width=390
