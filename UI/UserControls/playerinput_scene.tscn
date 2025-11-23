@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg41w8sq6b3yg"]
+[gd_scene load_steps=3 format=3 uid="uid://dg41w8sq6b3yg"]
 
 [ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_jqnko"]
-[ext_resource type="Script" uid="uid://c8087hoi0dk1h" path="res://UI/CustomControls/core_card.gd" id="2_fvfmp"]
 [ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_re7vb"]
 
 [node name="PlayerInputScene" type="VBoxContainer"]
@@ -16,7 +15,6 @@ layout_mode = 2
 
 [node name="GridContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 columns = 5
-script = ExtResource("2_fvfmp")
 
 [node name="Card" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="0" instance=ExtResource("2_re7vb")]
 layout_mode = 2

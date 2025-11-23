@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2q6s5pw1esjw"]
+[gd_scene load_steps=3 format=3 uid="uid://2q6s5pw1esjw"]
 
 [ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_0u68x"]
 [ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_0qshq"]
-[ext_resource type="Script" uid="uid://dsii2tvw21mp1" path="res://UI/CustomControls/grid_card.gd" id="2_xjea0"]
 
 [node name="ScoreScene" type="VBoxContainer"]
 visible = false
@@ -17,7 +16,6 @@ layout_mode = 2
 
 [node name="GridContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 columns = 4
-script = ExtResource("2_xjea0")
 
 [node name="Card" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="0" instance=ExtResource("2_0qshq")]
 layout_mode = 2
