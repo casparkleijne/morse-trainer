@@ -25,11 +25,11 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level"
 
-[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "1"
 
@@ -41,11 +41,11 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level"
 
-[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "1"
 
@@ -57,11 +57,11 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level"
 
-[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "1"
 
@@ -73,11 +73,11 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level"
 
-[node name="Label2" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
+[node name="LabelValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "1"
 
