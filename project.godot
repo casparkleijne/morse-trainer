@@ -21,9 +21,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioManager="*res://Audio/audio_manager.gd"
-MorseData="*res://Game/morse_data.gd"
-Game="*res://Game/game.gd"
+MorseData="*res://Data/morse_data.gd"
+Game="*res://Game/game_manager.gd"
 EventBus="*res://Game/event_bus.gd"
+LevelManager="*res://Game/level_manager.gd"
+RoundManager="*res://Game/round_manager.gd"
 
 [display]
 

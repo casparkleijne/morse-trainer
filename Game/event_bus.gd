@@ -1,3 +1,6 @@
 extends Node
 
-signal letter_selected(letter: String)
+signal started()
+signal paused()
+signal resetted()
+signal finished()
