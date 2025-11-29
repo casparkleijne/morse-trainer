@@ -1,5 +1,4 @@
 extends Node
-
 ## Global event bus for decoupled communication between game components.
 ## 
 ## This autoload singleton enables loose coupling between UI elements and game logic.
@@ -11,6 +10,7 @@ extends Node
 ##
 ## Note: The @warning_ignore annotations suppress "unused_signal" warnings since
 ## signals are connected dynamically by other scripts, not within this file.
+
 
 # ------------------------------------------------------------------------------
 # Session State Signals
@@ -29,12 +29,13 @@ signal paused()
 ## Emitted when the training session is cleared and returned to initial state.
 ## Listeners should reset progress, clear UI, and prepare for a fresh session.
 @warning_ignore("unused_signal")
-signal resetted()
+signal reset()
 
 ## Emitted when all rounds in the training session are completed.
 ## Listeners should show results, disable input, and enable reset option.
 @warning_ignore("unused_signal")
 signal finished()
+
 
 # ------------------------------------------------------------------------------
 # Letter Pool Signals
@@ -52,12 +53,53 @@ signal letters_changed(letters: String)
 @warning_ignore("unused_signal")
 signal letter_selected(letter: String)
 
+
 # ------------------------------------------------------------------------------
 # Progress Signals
 # ------------------------------------------------------------------------------
 
 ## Emitted when session progress updates (e.g., after each answer).
 ## Listeners should update progress bars or round counters.
-## @param value: Current progress value (interpretation depends on UI, e.g., percentage or round number)
+## @param value: Current progress percentage (0.0 to 100.0)
 @warning_ignore("unused_signal")
-signal progress_changed(value: int)
+signal progress_changed(value: float)
+
+## Emitted when the player advances to a new level.
+## Listeners should update level display and potentially trigger level-up feedback.
+## @param level: The new level number (1-indexed)
+@warning_ignore("unused_signal")
+signal level_changed(level: int)
+
+## Emitted when turn count updates within a level.
+## Listeners can use this for detailed progress tracking.
+## @param current: Current turn number within the level
+## @param total: Total turns required to complete the level
+@warning_ignore("unused_signal")
+signal turn_changed(current: int, total: int)
+
+
+# ------------------------------------------------------------------------------
+# Score Signals
+# ------------------------------------------------------------------------------
+
+## Emitted when the player's streak changes.
+## Streak increases on correct answers and resets to zero on incorrect answers.
+## @param streak: Current consecutive correct answers
+@warning_ignore("unused_signal")
+signal streak_changed(streak: int)
+
+## Emitted when the player's accuracy percentage updates.
+## Calculated as (correct answers / total attempts) * 100.
+## @param accuracy: Current accuracy percentage (0.0 to 100.0)
+@warning_ignore("unused_signal")
+signal accuracy_changed(accuracy: float)
+
+## Emitted when the total attempt count changes.
+## Increments on every answer, regardless of correctness.
+## @param attempts: Total number of attempts in current session
+@warning_ignore("unused_signal")
+signal attempts_changed(attempts: int)
+
+
+@warning_ignore("unused_signal")
+signal input_enabled(enabled: bool)

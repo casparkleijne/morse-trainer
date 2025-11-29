@@ -34,7 +34,7 @@ func _connect_signals() -> void:
 	# Listen for external state changes (e.g., session auto-finish)
 	EventBus.started.connect(_on_started)
 	EventBus.paused.connect(_on_paused)
-	EventBus.resetted.connect(_on_resetted)
+	EventBus.reset.connect(_on_resetted)
 	EventBus.finished.connect(_on_finished)
 	
 	# Button presses emit corresponding EventBus signals
@@ -88,4 +88,4 @@ func _on_button_pause_pressed() -> void:
 
 ## Emits the resetted signal to clear and restart the session.
 func _on_button_reset_pressed() -> void:
-	EventBus.resetted.emit()
+	EventBus.reset.emit()

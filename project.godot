@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 AudioManager="*res://Audio/audio_manager.gd"
 MorseData="*res://Data/morse_data.gd"
 EventBus="*res://Game/event_bus.gd"
+Helpers="*res://Game/helpers.gd"
 
 [display]
 

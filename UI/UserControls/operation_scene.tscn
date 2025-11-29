@@ -48,10 +48,6 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "reset"
 
-[connection signal="pressed" from="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/ButtonStart" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/ButtonPause" to="." method="_on_button_pause_pressed"]
-[connection signal="pressed" from="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/ButtonReset" to="." method="_on_button_reset_pressed"]
-
 [editable path="GridCard"]
 [editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card"]
 [editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2"]
