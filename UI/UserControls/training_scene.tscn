@@ -16,6 +16,7 @@ visible = true
 layout_mode = 2
 
 [node name="PlayerInputScene" parent="." instance=ExtResource("3_26ntm")]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_2jlvh")
 

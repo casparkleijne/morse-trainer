@@ -1,11 +1,14 @@
+class_name MainScene
 extends Node2D
 
-func _ready():
+var progress : int = 0
+func _ready() -> void:
+	EventBus.paused.emit()
+	EventBus.letters_changed.emit("ABCDE")
+	EventBus.letter_selected.connect(_on_letter_selected)
 	pass
 
-func _on_start_pressed() -> void:
-	pass
-
-
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+func _on_letter_selected (letter:String):
+	
+	progress = progress + 1
+	EventBus.progress_changed.emit(progress)

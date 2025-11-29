@@ -1,23 +1,7 @@
 # autoload/morse_data.gd
 extends Node
 
-
-const KOCH_ORDER = [
-	"K", "M",           # Les 1-2
-	"R", "S", "U",      # Les 3-5
-	"A", "P", "T",      # Les 6-8
-	"L", "O", "W",      # Les 9-11
-	"I", ".", "N",      # Les 12-14
-	"J", "E", "F",      # Les 15-17
-	"0", "Y", "V",      # Les 18-20
-	"G", "5", "/",      # Les 21-23
-	"Q", "9", "Z",      # Les 24-26s
-	"H", "3", "8",      # Les 27-29
-	"B", "?", "4",      # Les 30-32
-	"2", "7", "C",      # Les 33-35
-	"1", "D", "6",      # Les 36-38
-	"X"                 # Les 39-40
-]
+const KOCH_ORDER = "KMRSUAPTLOWI.NJEF0YVG5/Q9ZH38B?427C1D6X"
 
 const MORSE_CODE = {
 	"A": ".-",     "B": "-...",   "C": "-.-.",
@@ -36,9 +20,9 @@ const MORSE_CODE = {
 	".": ".-.-.-", "/": "-..-.",  "?": "..--.."
 }
 
-func get_characters(lesson_number: int) -> Array:
-	var char_count = min(lesson_number * 2, KOCH_ORDER.size())
-	return KOCH_ORDER.slice(0, char_count)
+func get_characters(lesson_number: int) -> String:
+	var char_count = mini(lesson_number * 2, KOCH_ORDER.length())
+	return KOCH_ORDER.substr(0, char_count)
 
 func get_morse(character: String) -> String:
 	return MORSE_CODE.get(character.to_upper(), "")

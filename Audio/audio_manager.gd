@@ -108,14 +108,7 @@ func _float_to_bytes(samples: PackedFloat32Array) -> PackedByteArray:
 	return bytes
 
 # Settings functies
-func set_speed(wpm: int):
-	# Words Per Minute - standard is PARIS = 50 dits
-	var dit_ms = 1200.0 / wpm
-	# Update alle durations...
 
-func set_tone(frequency: float):
-	# Aanpassen frequency
-	pass
 
 func set_volume(volume_db: float):
 	audio_player.volume_db = volume_db
