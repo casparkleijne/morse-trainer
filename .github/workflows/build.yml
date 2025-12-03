@@ -6,6 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  build-ios:
+      runs-on: self-hosted
+      steps:
+        - uses: actions/checkout@v4
+        
+        - name: Export iOS
+          run: |
+            mkdir -p build/ios
+            /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "iOS" ./build/ios/MorseTrainer
   build:
     runs-on: self-hosted
     steps:
