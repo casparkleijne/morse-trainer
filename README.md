@@ -1,4 +1,4 @@
-# Morse Code Trainer
+# Morse Code Trainer!
 
 A retro-styled morse code learning application using the Koch method, built with Godot 4.5. Features an authentic 8-bit aesthetic with ANSI color palette and pixel-perfect rendering.
 
