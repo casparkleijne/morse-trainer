@@ -1,0 +1,16 @@
+name: Test Runner
+
+on:
+  workflow_dispatch:  # handmatig starten
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Hello
+        run: echo "Runner werkt! 🎉"
+      - name: Check system
+        run: |
+          uname -a
+          whoami
+          pwd
