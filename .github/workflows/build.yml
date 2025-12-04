@@ -6,36 +6,33 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build macOS
+        run: |
+          mkdir -p build
+          /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "macOS" ./build/MorseTrainer.zip
 
   build-ios:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-
-      - name: Debug - show files
-        run: |
-          ls -la ./build/
-          ls -la ./build/ios/ || echo "ios folder empty or not found"
-          find ./build -name "*.xcodeproj" || echo "no xcodeproj found"
-
-      - name: Debug - check secret
-        run: |
-          echo "Team ID length: ${#TEAM_ID}"
-          echo "First 3 chars: ${TEAM_ID:0:3}"
-        env:
-          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
       
       - name: Set Team ID
         run: |
-          cat export_presets.cfg | grep app_store_team_id
+          echo "Before:"
+          grep app_store_team_id export_presets.cfg
           sed -i '' 's/app_store_team_id="[^"]*"/app_store_team_id="${{ secrets.APPLE_TEAM_ID }}"/' export_presets.cfg
-          echo "After sed:"
-          cat export_presets.cfg | grep app_store_team_id
+          echo "After:"
+          grep app_store_team_id export_presets.cfg
       
-      - name: Set Team ID
+      - name: Export iOS
         run: |
-          sed -i '' 's/app_store_team_id="[^"]*"/app_store_team_id="${{ secrets.APPLE_TEAM_ID }}"/' export_presets.cfg
-
+          mkdir -p build/ios
+          /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "iOS" ./build/ios/MorseTrainer
       
       - name: Build iOS
         run: |
