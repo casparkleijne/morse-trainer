@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-mac:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,13 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      
+
+      - name: Unlock Keychain
+        run: |
+          security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" ~/Library/Keychains/login.keychain-db
+          security set-keychain-settings -t 3600 ~/Library/Keychains/login.keychain-db
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "${{ secrets.KEYCHAIN_PASSWORD }}" ~/Library/Keychains/login.keychain-db
+            
       - name: Set Team ID
         run: |
           echo "Before:"
