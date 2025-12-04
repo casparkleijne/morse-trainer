@@ -5,7 +5,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   build-ios:
       runs-on: self-hosted
@@ -21,12 +20,3 @@ jobs:
                        CODE_SIGN_STYLE=Automatic \
                        DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
                        archive -archivePath ./build/ios/MorseTrainer.xcarchive
-  build:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Build macOS
-        run: |
-          mkdir -p build
-          /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "macOS" ./build/MorseTrainer.zip
