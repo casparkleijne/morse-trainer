@@ -22,6 +22,20 @@ jobs:
           ls -la ./build/
           ls -la ./build/ios/ || echo "ios folder empty or not found"
           find ./build -name "*.xcodeproj" || echo "no xcodeproj found"
+
+      - name: Debug - check secret
+        run: |
+          echo "Team ID length: ${#TEAM_ID}"
+          echo "First 3 chars: ${TEAM_ID:0:3}"
+        env:
+          TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      
+      - name: Set Team ID
+        run: |
+          cat export_presets.cfg | grep app_store_team_id
+          sed -i '' 's/app_store_team_id="[^"]*"/app_store_team_id="${{ secrets.APPLE_TEAM_ID }}"/' export_presets.cfg
+          echo "After sed:"
+          cat export_presets.cfg | grep app_store_team_id
       
       - name: Set Team ID
         run: |
