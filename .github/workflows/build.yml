@@ -43,4 +43,5 @@ jobs:
                      CODE_SIGN_IDENTITY="Apple Development" \
                      CODE_SIGN_STYLE=Automatic \
                      DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
+                     -allowProvisioningUpdates \
                      archive -archivePath ./build/ios/MorseTrainer.xcarchive
