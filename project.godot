@@ -29,7 +29,9 @@ Helpers="*res://Game/helpers.gd"
 
 window/size/viewport_width=390
 window/size/viewport_height=844
+window/size/mode=3
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [rendering]
 
