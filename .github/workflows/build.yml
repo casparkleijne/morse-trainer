@@ -13,8 +13,14 @@ jobs:
         
         - name: Export iOS
           run: |
-            mkdir -p build/ios
-            /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "iOS" ./build/ios/MorseTrainer
+            cd build/ios
+            xcodebuild -project MorseTrainer.xcodeproj \
+                       -scheme MorseTrainer \
+                       -sdk iphoneos \
+                       CODE_SIGN_IDENTITY="Apple Development" \
+                       CODE_SIGN_STYLE=Automatic \
+                       DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
+                       archive -archivePath MorseTrainer.xcarchive
   build:
     runs-on: self-hosted
     steps:
