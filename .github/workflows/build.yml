@@ -11,18 +11,16 @@ jobs:
       runs-on: self-hosted
       steps:
         - uses: actions/checkout@v4
-        
         - name: Export iOS
           run: |
-            mkdir build/ios
-            cd build/ios
-            xcodebuild -project MorseTrainer.xcodeproj \
+            xcodebuild -project ./build/ios/MorseTrainer.xcodeproj \
                        -scheme MorseTrainer \
                        -sdk iphoneos \
+                       -configuration Release \
                        CODE_SIGN_IDENTITY="Apple Development" \
                        CODE_SIGN_STYLE=Automatic \
                        DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
-                       archive -archivePath MorseTrainer.xcarchive
+                       archive -archivePath ./build/ios/MorseTrainer.xcarchive
   build:
     runs-on: self-hosted
     steps:
