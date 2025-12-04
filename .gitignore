@@ -5,6 +5,13 @@
 # Godot-specific ignores
 *.translation
 
+MorseTrainer/
+MorseTrainer.pck
+PrivacyInfo.xcprivacy
+*.xcframework/
+build/
+*.a
+
 
 # Imported translations (automatically generated from CSV files)
 *.translation
