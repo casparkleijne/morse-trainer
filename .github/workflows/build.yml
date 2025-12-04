@@ -11,12 +11,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Export iOS
-        run: |
-          mkdir -p build/ios
-          /Applications/Godot.app/Contents/MacOS/Godot --headless --export-release "iOS" ./build/ios/MorseTrainer
-      
+
       - name: Debug - show files
         run: |
           ls -la ./build/
