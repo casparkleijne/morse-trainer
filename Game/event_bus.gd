@@ -1,9 +1,9 @@
 extends Node
 ## Global event bus for decoupled communication between game components.
-## 
+##
 ## This autoload singleton enables loose coupling between UI elements and game logic.
 ## Components emit and listen to signals here without needing direct references to each other.
-## 
+##
 ## Usage:
 ##   Emit:   EventBus.started.emit()
 ##   Listen: EventBus.started.connect(_on_started)

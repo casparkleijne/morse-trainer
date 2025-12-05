@@ -36,7 +36,7 @@ func _connect_signals() -> void:
 	EventBus.paused.connect(_on_paused)
 	EventBus.reset.connect(_on_resetted)
 	EventBus.finished.connect(_on_finished)
-	
+
 	# Button presses emit corresponding EventBus signals
 	_button_start.pressed.connect(_on_button_start_pressed)
 	_button_pause.pressed.connect(_on_button_pause_pressed)

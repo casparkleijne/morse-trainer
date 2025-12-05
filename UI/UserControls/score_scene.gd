@@ -16,7 +16,7 @@ func _ready():
 	EventBus.accuracy_changed.connect(_on_accuracy_changed)
 	EventBus.attempts_changed.connect(_on_attempts_changed)
 	EventBus.reset.connect(_on_reset)
-	
+
 	_set_titles()
 	_on_reset()
 

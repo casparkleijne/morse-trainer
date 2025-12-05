@@ -67,7 +67,7 @@ func _cache_card_references() -> void:
 func _connect_signals() -> void:
 	EventBus.input_enabled.connect(_on_input_enabled)
 	EventBus.letters_changed.connect(_on_letters_changed)
-	
+
 	for button in _buttons:
 		button.pressed.connect(_on_button_pressed.bind(button))
 
@@ -86,9 +86,9 @@ func _on_input_enabled(enabled: bool) -> void:
 ## Updates grid columns, shows/hides cards, and assigns letters to buttons.
 func _on_letters_changed(letters: String) -> void:
 	var count := letters.length()
-	
+
 	_grid.columns = count
-	
+
 	for i in range(MAX_CARDS):
 		var has_letter := i < count
 		_cards[i].visible = has_letter

@@ -1,4 +1,5 @@
-extends Control
 class_name GridCard
+extends Control
 
-@onready var content: GridContainer = $MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
+@onready 
+var content: GridContainer = $MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
