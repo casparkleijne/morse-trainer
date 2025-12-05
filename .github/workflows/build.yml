@@ -91,7 +91,17 @@ jobs:
         with:
           name: MorseTrainer-iOS
           path: ./build/ios/export/*.ipa
-
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install gdtoolkit
+        run: pip install gdtoolkit
+      
+      - name: Lint GDScript
+        run: gdlint .
+  
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
