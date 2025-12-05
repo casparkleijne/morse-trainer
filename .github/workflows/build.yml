@@ -93,6 +93,11 @@ jobs:
         with:
           name: MorseTrainer-iOS
           path: ./build/ios/export/*.ipa
+
+      - name: Install on iPhone
+        run: |
+          xcrun devicectl device install app --device "${{ secrets.IPHONE_DEVICE_ID }}" ./build/ios/export/MorseTrainer.ipa
+
   lint:
     runs-on: ubuntu-latest
     steps:
