@@ -33,7 +33,7 @@ var _buttons: Array[Button] = []
 
 ## Reference to the GridContainer that holds the cards.
 ## Used to dynamically adjust column count based on active letters.
-@onready 
+@onready
 var _grid: GridContainer = $GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
 
 
@@ -59,7 +59,7 @@ func _cache_card_references() -> void:
 		var card: Control = get_node("%" + "Card" + str(i))
 		var target = "MarginContainer/PanelContainer/MarginContainer/PanelContainer/Button"
 		var button: Button = card.get_node(target)
-		
+
 		_cards.append(card)
 		_buttons.append(button)
 
