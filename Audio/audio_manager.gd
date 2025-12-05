@@ -50,7 +50,7 @@ func _generate_morse_audio(morse_code: String) -> AudioStreamWAV:
 
 	for i in range(morse_code.length()):
 		var symbol = morse_code[i]
-		
+
 		match symbol:
 			".":
 				_add_tone(samples, DIT_DURATION)
@@ -59,7 +59,7 @@ func _generate_morse_audio(morse_code: String) -> AudioStreamWAV:
 			" ":
 				_add_silence(samples, LETTER_GAP)
 				continue
-		
+
 		# Symbol gap (behalve na laatste symbool)
 		if i < morse_code.length() - 1 and morse_code[i + 1] != " ":
 			_add_silence(samples, SYMBOL_GAP)
