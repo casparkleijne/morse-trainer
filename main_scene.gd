@@ -110,7 +110,7 @@ func _on_turn_timeout() -> void:
 func _on_letter_selected(letter: String) -> void:
 	turn_timer.stop()
 	EventBus.input_enabled.emit(false)
-	
+
 	if letter == current_letter:
 		_complete_turn()
 	else:
@@ -146,12 +146,12 @@ func _complete_turn() -> void:
 	correct += 1
 	streak += 1
 	_emit_stats()
-	
+
 	if _can_level_up():
 		_level_up()
-	
+
 	_emit_progress()
-	
+
 	await get_tree().create_timer(answer_delay).timeout
 	_start_new_round()
 
@@ -159,7 +159,7 @@ func _complete_turn() -> void:
 func _can_level_up() -> bool:
 	if attempts < min_attempts_for_level:
 		return false
-	
+
 	var accuracy: float = float(correct) / float(attempts) * 100.0
 	return accuracy >= required_accuracy
 
