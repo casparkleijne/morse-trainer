@@ -9,7 +9,7 @@ func get_turns_for_level(level: int) -> int:
 		letter_count = level + 1
 	else:
 		letter_count = 5
-	
+
 	return letter_count * 10
 
 func get_letters_for_level(level: int) -> String:
