@@ -10,6 +10,7 @@ on:
 jobs:
   build-mac:
     runs-on: self-hosted
+    needs: lint
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +27,7 @@ jobs:
 
   build-ios:
     runs-on: self-hosted
+    needs: lint
     steps:
       - uses: actions/checkout@v4
 
@@ -104,6 +106,7 @@ jobs:
   
   sonarqube:
     name: SonarQube
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
