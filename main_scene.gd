@@ -1,6 +1,6 @@
 class_name MainScene
 extends Node2D
-## Main game controller that manages level progression and turn tracking.
+## Main game controller that manages level progression and turn tracking (Koch method).
 ##
 ## Implements the Koch method for learning morse code:
 ## - Start with 2 characters at full speed
