@@ -196,16 +196,10 @@ func _emit_stats() -> void:
 
 
 func _emit_progress() -> void:
-	if attempts < min_attempts_for_level:
-		# Progress naar minimum attempts
-		var progress: float = float(attempts) / float(min_attempts_for_level) * 100.0
-		EventBus.progress_changed.emit(progress)
-	else:
-		# Genoeg attempts: progress is gebaseerd op accuracy richting target
-		var accuracy: float = float(correct) / float(attempts) * 100.0
-		var progress: float = accuracy / required_accuracy * 100.0
-		progress = min(progress, 100.0)
-		EventBus.progress_changed.emit(progress)
+	# Progress alleen vooruit bij correct antwoord
+	var progress: float = float(correct) / float(min_attempts_for_level) * 100.0
+	progress = min(progress, 100.0)
+	EventBus.progress_changed.emit(progress)
 
 
 func _emit_all() -> void:
