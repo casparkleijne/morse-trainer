@@ -86,6 +86,7 @@ func _on_reset() -> void:
 	correct = 0
 	streak = 0
 	turn_timer.stop()
+	CharacterMastery.reset()
 	EventBus.input_enabled.emit(false)
 	_emit_all()
 
@@ -102,6 +103,7 @@ func _on_paused() -> void:
 func _on_turn_timeout() -> void:
 	attempts += 1
 	streak = 0
+	CharacterMastery.record_attempt(current_letter, false)
 	_emit_stats()
 	_emit_progress()
 	_repeat_round()
@@ -116,6 +118,7 @@ func _on_letter_selected(letter: String) -> void:
 	else:
 		attempts += 1
 		streak = 0
+		CharacterMastery.record_attempt(current_letter, false)
 		_emit_stats()
 		_emit_progress()
 		await get_tree().create_timer(answer_delay).timeout
@@ -145,6 +148,7 @@ func _complete_turn() -> void:
 	attempts += 1
 	correct += 1
 	streak += 1
+	CharacterMastery.record_attempt(current_letter, true)
 	_emit_stats()
 
 	if _can_level_up():
