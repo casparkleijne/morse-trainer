@@ -1,4 +1,3 @@
-class_name CharacterMastery
 extends Node
 ## Tracks per-character mastery for targeted feedback.
 ##
