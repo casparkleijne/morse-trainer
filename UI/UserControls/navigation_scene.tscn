@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_bhfee"]
 [ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_lvlu1"]
-[ext_resource type="Script" path="res://UI/UserControls/navigation_scene.gd" id="3_nav"]
+[ext_resource type="Script" uid="uid://ckumfhx61kyce" path="res://UI/UserControls/navigation_scene.gd" id="3_nav"]
 
 [node name="NavigationScene" type="VBoxContainer"]
-script = ExtResource("3_nav")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_nav")
 
 [node name="GridCard" parent="." instance=ExtResource("1_bhfee")]
 layout_mode = 2
@@ -26,7 +26,7 @@ size_flags_vertical = 3
 [node name="ButtonTraining" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
 text = "train"
 
 [node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_lvlu1")]
@@ -37,7 +37,7 @@ size_flags_vertical = 3
 [node name="ButtonStatistics" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
 text = "stats"
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_lvlu1")]
@@ -48,7 +48,7 @@ size_flags_vertical = 3
 [node name="ButtonSettings" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
 text = "settings"
 
 [editable path="GridCard"]

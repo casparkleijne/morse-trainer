@@ -56,8 +56,10 @@ func _create_settings_ui() -> void:
 	var speed_title := Label.new()
 	speed_title.text = "Speed (WPM)"
 	speed_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	speed_title.add_theme_font_size_override("font_size", 16)
 	_wpm_label = Label.new()
 	_wpm_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_wpm_label.add_theme_font_size_override("font_size", 32)
 	speed_header.add_child(speed_title)
 	speed_header.add_child(_wpm_label)
 
@@ -84,8 +86,10 @@ func _create_settings_ui() -> void:
 	var freq_title := Label.new()
 	freq_title.text = "Frequency (Hz)"
 	freq_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	freq_title.add_theme_font_size_override("font_size", 16)
 	_freq_label = Label.new()
 	_freq_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_freq_label.add_theme_font_size_override("font_size", 32)
 	freq_header.add_child(freq_title)
 	freq_header.add_child(_freq_label)
 
@@ -108,7 +112,7 @@ func _create_settings_ui() -> void:
 	var test_button := Button.new()
 	test_button.text = "test sound"
 	test_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	test_button.add_theme_font_size_override("font_size", 16)
+	test_button.add_theme_font_size_override("font_size", 32)
 	test_button.pressed.connect(_on_test_pressed)
 	test_card.content.add_child(test_button)
 

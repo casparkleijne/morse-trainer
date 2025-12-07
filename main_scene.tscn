@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5bbt1fugbov2"]
+[gd_scene load_steps=14 format=3 uid="uid://b5bbt1fugbov2"]
 
 [ext_resource type="Script" uid="uid://dg811p0tmxroa" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="PackedScene" uid="uid://bnhws0chdgv2v" path="res://UI/UserControls/title_scene.tscn" id="2_gyfs4"]
@@ -7,9 +7,15 @@
 [ext_resource type="PackedScene" path="res://UI/UserControls/stats_scene.tscn" id="5_stats"]
 [ext_resource type="PackedScene" path="res://UI/UserControls/settings_scene.tscn" id="6_settings"]
 [ext_resource type="Theme" uid="uid://divioth2ba0kg" path="res://Theme/retro_theme.tres" id="7_theme"]
-[ext_resource type="Shader" path="res://Theme/crt_effect.gdshader" id="8_crt"]
+[ext_resource type="Shader" uid="uid://rw3xrs7qcnkd" path="res://Theme/crt_effect.gdshader" id="8_crt"]
+[ext_resource type="Shader" path="res://Theme/gradient_bg.gdshader" id="9_gradient"]
 
 [sub_resource type="GDScript" id="GDScript_8mm7a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gradient"]
+shader = ExtResource("9_gradient")
+shader_parameter/color_top = Color(0.5, 0.0, 0.5, 1)
+shader_parameter/color_bottom = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("8_crt")
@@ -18,7 +24,20 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_size = 0.5
 
 [node name="MainScene" type="Node2D"]
+position = Vector2(0, 32)
 script = ExtResource("1_0f027")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="GradientBG" type="ColorRect" parent="BackgroundLayer"]
+material = SubResource("ShaderMaterial_gradient")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -59,4 +78,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 1, 1, 1)

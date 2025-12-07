@@ -55,10 +55,12 @@ func _create_letter_cards() -> void:
 		letter_label.text = character
 		letter_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		letter_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		letter_label.add_theme_font_size_override("font_size", 32)
 
 		var mastery_label := Label.new()
 		mastery_label.text = "-"
 		mastery_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		mastery_label.add_theme_font_size_override("font_size", 32)
 
 		hbox.add_child(letter_label)
 		hbox.add_child(mastery_label)

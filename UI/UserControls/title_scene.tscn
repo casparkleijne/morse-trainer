@@ -6,8 +6,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_glow"]
 shader = ExtResource("2_glow")
 shader_parameter/glow_color = Color(1, 1, 0.333, 1)
-shader_parameter/glow_intensity = 1.5
-shader_parameter/glow_size = 3.0
+shader_parameter/glow_intensity = 3.0
+shader_parameter/glow_size = 10.0
 
 [node name="TitleScene" type="VBoxContainer"]
 anchors_preset = 15
