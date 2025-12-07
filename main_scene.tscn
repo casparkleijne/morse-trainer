@@ -10,24 +10,30 @@
 [ext_resource type="Shader" uid="uid://rw3xrs7qcnkd" path="res://Theme/crt_effect.gdshader" id="8_crt"]
 [ext_resource type="Shader" uid="uid://crb2hjl5ehxim" path="res://Theme/gradient_bg.gdshader" id="9_gradient"]
 
+[sub_resource type="Environment" id="Environment_7ycvg"]
+resource_local_to_scene = true
+background_mode = 3
+background_energy_multiplier = 5.31
+ambient_light_source = 3
+ambient_light_color = Color(0.8225542, 0.47164124, 0.30779198, 1)
+ambient_light_energy = 7.17
+glow_enabled = true
+glow_intensity = 1.08
+glow_bloom = 1.0
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 2.48
+glow_hdr_luminance_cap = 139.26
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 9.1
+fog_density = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gradient"]
 shader = ExtResource("9_gradient")
 shader_parameter/color_top = Color(0.5, 0, 0.5, 1)
 shader_parameter/color_bottom = Color(0, 0, 0, 1)
 
 [sub_resource type="GDScript" id="GDScript_8mm7a"]
-
-[sub_resource type="Environment" id="Environment_7ycvg"]
-background_mode = 3
-background_energy_multiplier = 3.82
-ambient_light_color = Color(0.9750959, 0.9999998, 0.97224194, 1)
-ambient_light_energy = 4.8
-glow_enabled = true
-glow_intensity = 1.53
-glow_bloom = 0.95
-glow_hdr_threshold = 0.15
-glow_hdr_scale = 0.52
-glow_hdr_luminance_cap = 161.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("8_crt")
@@ -38,6 +44,9 @@ shader_parameter/vignette_size = 0.5
 [node name="MainScene" type="Node2D"]
 position = Vector2(0, 32)
 script = ExtResource("1_0f027")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ycvg")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -62,9 +71,6 @@ script = SubResource("GDScript_8mm7a")
 [node name="TitleScene" parent="MainContainer" instance=ExtResource("2_gyfs4")]
 layout_mode = 2
 size_flags_vertical = 1
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="MainContainer/TitleScene"]
-environment = SubResource("Environment_7ycvg")
 
 [node name="NavigationScene" parent="MainContainer" instance=ExtResource("3_d5x1h")]
 layout_mode = 2
