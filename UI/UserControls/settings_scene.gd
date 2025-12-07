@@ -11,16 +11,21 @@ const CoreCardScene = preload("res://UI/CustomControls/core_card.tscn")
 
 
 # ------------------------------------------------------------------------------
-# Nodes
+# State
 # ------------------------------------------------------------------------------
-
-@onready var _grid: GridContainer = \
-	$GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
 
 var _wpm_slider: HSlider
 var _wpm_label: Label
 var _freq_slider: HSlider
 var _freq_label: Label
+
+
+# ------------------------------------------------------------------------------
+# Nodes
+# ------------------------------------------------------------------------------
+
+@onready var _grid: GridContainer = \
+	$GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
 
 
 # ------------------------------------------------------------------------------

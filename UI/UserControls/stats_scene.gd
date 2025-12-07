@@ -13,20 +13,20 @@ const CoreCardScene = preload("res://UI/CustomControls/core_card.tscn")
 
 
 # ------------------------------------------------------------------------------
-# Nodes
-# ------------------------------------------------------------------------------
-
-@onready var _grid: GridContainer = \
-	$GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
-
-
-# ------------------------------------------------------------------------------
 # State
 # ------------------------------------------------------------------------------
 
 var _letter_labels: Array[Label] = []
 var _mastery_labels: Array[Label] = []
 var _cards: Array[Control] = []
+
+
+# ------------------------------------------------------------------------------
+# Nodes
+# ------------------------------------------------------------------------------
+
+@onready var _grid: GridContainer = \
+	$GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer
 
 
 # ------------------------------------------------------------------------------
