@@ -11,18 +11,17 @@
 [ext_resource type="Shader" uid="uid://crb2hjl5ehxim" path="res://Theme/gradient_bg.gdshader" id="9_gradient"]
 
 [sub_resource type="Environment" id="Environment_7ycvg"]
-resource_local_to_scene = true
 background_mode = 3
-background_energy_multiplier = 5.31
+background_energy_multiplier = 8.06
 ambient_light_source = 3
-ambient_light_color = Color(0.8225542, 0.47164124, 0.30779198, 1)
+ambient_light_color = Color(0.99999994, 0.22311193, 0.45482296, 1)
 ambient_light_energy = 7.17
 glow_enabled = true
-glow_intensity = 1.08
+glow_intensity = 2.57
 glow_bloom = 1.0
 glow_hdr_threshold = 4.0
-glow_hdr_scale = 2.48
-glow_hdr_luminance_cap = 139.26
+glow_hdr_scale = 0.7
+glow_hdr_luminance_cap = 64.71
 fog_enabled = true
 fog_mode = 1
 fog_light_energy = 9.1
