@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyhk8bjgcd34n"]
+[gd_scene load_steps=4 format=3 uid="uid://cyhk8bjgcd34n"]
 
 [ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="1_bhfee"]
 [ext_resource type="PackedScene" uid="uid://j2mv8poqh1ow" path="res://UI/CustomControls/core_card.tscn" id="2_lvlu1"]
+[ext_resource type="Script" path="res://UI/UserControls/navigation_scene.gd" id="3_nav"]
 
 [node name="NavigationScene" type="VBoxContainer"]
+script = ExtResource("3_nav")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,7 +23,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+[node name="ButtonTraining" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "training"
 
@@ -30,9 +33,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+[node name="ButtonStatistics" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+unique_name_in_owner = true
 layout_mode = 2
-disabled = true
 text = "statistics"
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_lvlu1")]
@@ -40,9 +43,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+[node name="ButtonSettings" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+unique_name_in_owner = true
 layout_mode = 2
-disabled = true
 text = "settings"
 
 [editable path="GridCard"]

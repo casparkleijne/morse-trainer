@@ -28,15 +28,15 @@ func _set_titles():
 
 func _on_reset():
 	level_value.text = "1"
-	streak_value.text = "0"
+	streak_value.text = "0/0"
 	accuracy_value.text = "0%"
 	attempts_value.text = "0"
 
 func _on_level_changed(level: int):
 	level_value.text = str(level)
 
-func _on_streak_changed(streak: int):
-	streak_value.text = str(streak)
+func _on_streak_changed(current: int, required: int):
+	streak_value.text = str(current) + "/" + str(required)
 
 func _on_accuracy_changed(accuracy: float):
 	accuracy_value.text = str(int(accuracy)) + "%"

@@ -83,10 +83,11 @@ signal turn_changed(current: int, total: int)
 # ------------------------------------------------------------------------------
 
 ## Emitted when the player's streak changes.
-## Streak increases on correct answers and resets to zero on incorrect answers.
-## @param streak: Current consecutive correct answers
+## Shows current correct answers vs required correct answers.
+## @param current: Current correct answers in this round
+## @param required: Required correct answers to complete the round
 @warning_ignore("unused_signal")
-signal streak_changed(streak: int)
+signal streak_changed(current: int, required: int)
 
 ## Emitted when the player's accuracy percentage updates.
 ## Calculated as (correct answers / total attempts) * 100.
@@ -103,3 +104,20 @@ signal attempts_changed(attempts: int)
 
 @warning_ignore("unused_signal")
 signal input_enabled(enabled: bool)
+
+
+# ------------------------------------------------------------------------------
+# Navigation Signals
+# ------------------------------------------------------------------------------
+
+## Emitted when user navigates to training view
+@warning_ignore("unused_signal")
+signal navigate_training()
+
+## Emitted when user navigates to statistics view
+@warning_ignore("unused_signal")
+signal navigate_statistics()
+
+## Emitted when user navigates to settings view
+@warning_ignore("unused_signal")
+signal navigate_settings()

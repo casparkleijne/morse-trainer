@@ -3,19 +3,43 @@ extends Node
 
 signal playback_started()
 signal playback_finished()
+signal settings_changed()
 
-const DIT_DURATION = 0.06  # 60ms = 20 WPM
-const DAH_DURATION = DIT_DURATION * 3
-const SYMBOL_GAP = DIT_DURATION
-const LETTER_GAP = DIT_DURATION * 3
-const WORD_GAP = DIT_DURATION * 7
-const TONE_FREQUENCY = 700.0  # Hz
 const SAMPLE_RATE = 22050
+
+## Speed in WPM (words per minute)
+var wpm: float = 20.0:
+	set(value):
+		wpm = clamp(value, 15.0, 60.0)
+		_update_timings()
+		settings_changed.emit()
+
+## Tone frequency in Hz
+var frequency: float = 700.0:
+	set(value):
+		frequency = clamp(value, 440.0, 1320.0)
+		settings_changed.emit()
+
+var dit_duration: float = 0.06
+var dah_duration: float = 0.18
+var symbol_gap: float = 0.06
+var letter_gap: float = 0.18
+var word_gap: float = 0.42
 
 var audio_player: AudioStreamPlayer
 var is_playing: bool = false
 
+
+func _update_timings() -> void:
+	# Standard timing: dit = 1.2 / WPM seconds
+	dit_duration = 1.2 / wpm
+	dah_duration = dit_duration * 3
+	symbol_gap = dit_duration
+	letter_gap = dit_duration * 3
+	word_gap = dit_duration * 7
+
 func _ready():
+	_update_timings()
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
 	audio_player.finished.connect(_on_playback_finished)
@@ -53,16 +77,16 @@ func _generate_morse_audio(morse_code: String) -> AudioStreamWAV:
 
 		match symbol:
 			".":
-				_add_tone(samples, DIT_DURATION)
+				_add_tone(samples, dit_duration)
 			"-":
-				_add_tone(samples, DAH_DURATION)
+				_add_tone(samples, dah_duration)
 			" ":
-				_add_silence(samples, LETTER_GAP)
+				_add_silence(samples, letter_gap)
 				continue
 
 		# Symbol gap (behalve na laatste symbool)
 		if i < morse_code.length() - 1 and morse_code[i + 1] != " ":
-			_add_silence(samples, SYMBOL_GAP)
+			_add_silence(samples, symbol_gap)
 
 	var stream = AudioStreamWAV.new()
 	stream.data = _float_to_bytes(samples)
@@ -77,7 +101,7 @@ func _add_tone(samples: PackedFloat32Array, duration: float):
 
 	for i in range(sample_count):
 		var t = float(i) / SAMPLE_RATE
-		var sample = sin(2.0 * PI * TONE_FREQUENCY * t)
+		var sample = sin(2.0 * PI * frequency * t)
 
 		# Apply envelope (attack/decay) voor smooth sound
 		var envelope = 1.0

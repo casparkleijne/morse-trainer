@@ -24,6 +24,9 @@ extends Node2D
 ## Minimum attempts required before level up is possible
 @export var min_attempts_for_level: int = 20
 
+## Minimum accuracy percentage before round resets
+@export var minimum_accuracy: float = 66.0
+
 
 # ------------------------------------------------------------------------------
 # State Variables
@@ -48,6 +51,9 @@ var current_letter: String = ""
 ## Available letters for current level
 var current_letters: String = ""
 
+## Whether the game is currently running
+var is_running: bool = false
+
 
 # ------------------------------------------------------------------------------
 # Nodes
@@ -67,6 +73,8 @@ func _ready() -> void:
 	EventBus.started.connect(_on_started)
 	EventBus.paused.connect(_on_paused)
 	EventBus.letter_selected.connect(_on_letter_selected)
+	EventBus.navigate_statistics.connect(_on_navigate_away)
+	EventBus.navigate_settings.connect(_on_navigate_away)
 	_emit_all()
 
 
@@ -85,6 +93,7 @@ func _on_reset() -> void:
 	attempts = 0
 	correct = 0
 	streak = 0
+	is_running = false
 	turn_timer.stop()
 	CharacterMastery.reset()
 	EventBus.input_enabled.emit(false)
@@ -92,19 +101,30 @@ func _on_reset() -> void:
 
 
 func _on_started() -> void:
+	is_running = true
 	_start_new_round()
 
 
 func _on_paused() -> void:
+	is_running = false
+	turn_timer.stop()
+	EventBus.input_enabled.emit(false)
+
+
+func _on_navigate_away() -> void:
+	is_running = false
 	turn_timer.stop()
 	EventBus.input_enabled.emit(false)
 
 
 func _on_turn_timeout() -> void:
+	if not is_running:
+		return
 	attempts += 1
 	streak = 0
 	CharacterMastery.record_attempt(current_letter, false)
 	_emit_stats()
+	_check_accuracy_reset()
 	_emit_progress()
 	_repeat_round()
 
@@ -120,9 +140,11 @@ func _on_letter_selected(letter: String) -> void:
 		streak = 0
 		CharacterMastery.record_attempt(current_letter, false)
 		_emit_stats()
+		_check_accuracy_reset()
 		_emit_progress()
 		await get_tree().create_timer(answer_delay).timeout
-		_repeat_round()
+		if is_running:
+			_repeat_round()
 
 
 # ------------------------------------------------------------------------------
@@ -157,7 +179,8 @@ func _complete_turn() -> void:
 	_emit_progress()
 
 	await get_tree().create_timer(answer_delay).timeout
-	_start_new_round()
+	if is_running:
+		_start_new_round()
 
 
 func _can_level_up() -> bool:
@@ -166,6 +189,15 @@ func _can_level_up() -> bool:
 
 	var accuracy: float = float(correct) / float(attempts) * 100.0
 	return accuracy >= required_accuracy
+
+
+func _check_accuracy_reset() -> void:
+	var accuracy: float = CharacterMastery.get_average_mastery(current_letters)
+	if accuracy < minimum_accuracy:
+		attempts = 0
+		correct = 0
+		CharacterMastery.reset_characters(current_letters)
+		_emit_stats()
 
 
 func _level_up() -> void:
@@ -191,11 +223,9 @@ func _play_letter(letter: String) -> void:
 
 
 func _emit_stats() -> void:
-	var accuracy: float = 0.0
-	if attempts > 0:
-		accuracy = float(correct) / float(attempts) * 100.0
+	var accuracy: float = CharacterMastery.get_average_mastery(current_letters)
 	EventBus.attempts_changed.emit(attempts)
-	EventBus.streak_changed.emit(streak)
+	EventBus.streak_changed.emit(correct, min_attempts_for_level)
 	EventBus.accuracy_changed.emit(accuracy)
 
 

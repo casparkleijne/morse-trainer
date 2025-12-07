@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduoje8adu4yk"]
+
+[ext_resource type="Script" path="res://UI/UserControls/settings_scene.gd" id="1_settings"]
+[ext_resource type="PackedScene" uid="uid://b52vx1p5uhvqw" path="res://UI/CustomControls/grid_card.tscn" id="2_grid"]
+
+[node name="SettingsScene" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings")
+
+[node name="GridCard" parent="." instance=ExtResource("2_grid")]
+layout_mode = 2
+
+[node name="GridContainer" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+columns = 1
+
+[editable path="GridCard"]
