@@ -123,6 +123,7 @@ func _update_display() -> void:
 			_mastery_labels[i].modulate = Color.WHITE
 		else:
 			_mastery_labels[i].text = "-"
-			_cards[i].modulate = Color(1, 1, 1, 0.3)
-			_letter_labels[i].modulate = Color(1, 1, 1, 0.3)
-			_mastery_labels[i].modulate = Color(1, 1, 1, 0.3)
+			var dimmed := Color(1, 1, 1, RetroColors.OPACITY_DIMMED)
+			_cards[i].modulate = dimmed
+			_letter_labels[i].modulate = dimmed
+			_mastery_labels[i].modulate = dimmed

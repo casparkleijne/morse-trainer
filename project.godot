@@ -25,6 +25,7 @@ MorseData="*res://Data/morse_data.gd"
 EventBus="*res://Game/event_bus.gd"
 Helpers="*res://Game/helpers.gd"
 CharacterMastery="*res://Game/character_mastery.gd"
+RetroColors="*res://Theme/retro_colors.gd"
 
 [display]
 
@@ -38,3 +39,4 @@ window/handheld/orientation=1
 
 renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.1, 0.1, 0.12, 1)
