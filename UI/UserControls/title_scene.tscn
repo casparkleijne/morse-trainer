@@ -22,8 +22,10 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
+self_modulate = Color(0.21348211, 0.5071683, 1, 1)
 material = SubResource("ShaderMaterial_glow")
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2784314, 0.7176471, 0.0627451, 1)
 theme_override_font_sizes/font_size = 32
 text = "Yet Another
 Morse Trainer"
