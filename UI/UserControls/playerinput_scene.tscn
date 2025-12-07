@@ -18,6 +18,7 @@ columns = 5
 
 [node name="Card1" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="0" instance=ExtResource("2_re7vb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -25,46 +26,65 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card1/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "D"
 
 [node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_re7vb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "C"
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_re7vb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "B"
 
 [node name="Card4" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="3" instance=ExtResource("2_re7vb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "A"
 
 [node name="Card5" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="4" instance=ExtResource("2_re7vb")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card5/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "E"
 
 [editable path="GridCard"]

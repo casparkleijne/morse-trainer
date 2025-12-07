@@ -1,17 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5bbt1fugbov2"]
+[gd_scene load_steps=12 format=3 uid="uid://b5bbt1fugbov2"]
 
 [ext_resource type="Script" uid="uid://dg811p0tmxroa" path="res://main_scene.gd" id="1_0f027"]
 [ext_resource type="PackedScene" uid="uid://bnhws0chdgv2v" path="res://UI/UserControls/title_scene.tscn" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://cyhk8bjgcd34n" path="res://UI/UserControls/navigation_scene.tscn" id="3_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://o3y7yri8vvy0" path="res://UI/UserControls/training_scene.tscn" id="4_8mm7a"]
-[ext_resource type="PackedScene" uid="uid://dstatsscene001" path="res://UI/UserControls/stats_scene.tscn" id="5_stats"]
-[ext_resource type="PackedScene" uid="uid://csettingsscene" path="res://UI/UserControls/settings_scene.tscn" id="6_settings"]
-[ext_resource type="Theme" path="res://Theme/retro_theme.tres" id="7_theme"]
+[ext_resource type="PackedScene" path="res://UI/UserControls/stats_scene.tscn" id="5_stats"]
+[ext_resource type="PackedScene" path="res://UI/UserControls/settings_scene.tscn" id="6_settings"]
+[ext_resource type="Theme" uid="uid://divioth2ba0kg" path="res://Theme/retro_theme.tres" id="7_theme"]
+[ext_resource type="Shader" path="res://Theme/crt_effect.gdshader" id="8_crt"]
 
 [sub_resource type="GDScript" id="GDScript_8mm7a"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
+shader = ExtResource("8_crt")
+shader_parameter/scanline_intensity = 0.3
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_size = 0.5
+
 [node name="MainScene" type="Node2D"]
-position = Vector2(0, 128)
 script = ExtResource("1_0f027")
 
 [node name="MainContainer" type="VBoxContainer" parent="."]
@@ -41,3 +47,16 @@ layout_mode = 2
 
 [node name="TurnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CRTLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="CRTOverlay" type="ColorRect" parent="CRTLayer"]
+material = SubResource("ShaderMaterial_crt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 1)

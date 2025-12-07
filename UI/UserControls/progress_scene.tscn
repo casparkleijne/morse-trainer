@@ -16,7 +16,9 @@ layout_mode = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+show_percentage = false
 step = 1.0
 value = 12.0
 

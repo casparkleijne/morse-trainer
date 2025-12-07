@@ -108,6 +108,7 @@ func _create_settings_ui() -> void:
 	var test_button := Button.new()
 	test_button.text = "test sound"
 	test_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	test_button.add_theme_font_size_override("font_size", 16)
 	test_button.pressed.connect(_on_test_pressed)
 	test_card.content.add_child(test_button)
 

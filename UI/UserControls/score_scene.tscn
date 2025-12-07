@@ -31,11 +31,14 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "1"
+horizontal_alignment = 1
 
 [node name="LevelValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Level"
+horizontal_alignment = 1
 
 [node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_0qshq")]
 layout_mode = 2
@@ -49,11 +52,14 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "1"
+horizontal_alignment = 1
 
 [node name="StreakValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Level"
+horizontal_alignment = 1
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_0qshq")]
 layout_mode = 2
@@ -67,11 +73,14 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "1"
+horizontal_alignment = 1
 
 [node name="AccuracyValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Level"
+horizontal_alignment = 1
 
 [node name="Card4" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="3" instance=ExtResource("2_0qshq")]
 layout_mode = 2
@@ -85,11 +94,14 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "1"
+horizontal_alignment = 1
 
 [node name="AttemptsValue" type="Label" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card4/MarginContainer/PanelContainer/MarginContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Level"
+horizontal_alignment = 1
 
 [editable path="GridCard"]
 [editable path="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card"]

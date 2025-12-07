@@ -26,7 +26,8 @@ size_flags_vertical = 3
 [node name="ButtonTraining" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "training"
+theme_override_font_sizes/font_size = 12
+text = "train"
 
 [node name="Card2" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="1" instance=ExtResource("2_lvlu1")]
 layout_mode = 2
@@ -36,7 +37,8 @@ size_flags_vertical = 3
 [node name="ButtonStatistics" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card2/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "statistics"
+theme_override_font_sizes/font_size = 12
+text = "stats"
 
 [node name="Card3" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer" index="2" instance=ExtResource("2_lvlu1")]
 layout_mode = 2
@@ -46,6 +48,7 @@ size_flags_vertical = 3
 [node name="ButtonSettings" type="Button" parent="GridCard/MarginContainer/PanelContainer/MarginContainer/PanelContainer/GridContainer/Card3/MarginContainer/PanelContainer/MarginContainer/PanelContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "settings"
 
 [editable path="GridCard"]
